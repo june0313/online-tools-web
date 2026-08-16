@@ -1,6 +1,6 @@
 # AGENTS.md
 
-온라인 도구 모음 사이트. 브라우저에서 바로 동작하는 무료 웹 유틸리티를 여러 개 모아두는 허브이며, 각 도구는 `src/tools/` 아래 독립된 페이지로 존재한다. 현재 도구: JSON 포맷터.
+온라인 도구 모음 사이트. 브라우저에서 바로 동작하는 무료 웹 유틸리티를 여러 개 모아두는 허브이며, 각 도구는 `src/tools/` 아래 독립된 페이지로 존재한다. 현재 도구: JSON 포맷터, URL 인코더/디코더.
 
 ## 스택
 
@@ -17,7 +17,10 @@ src/                             편집하는 소스 (이 안의 파일만 수�
 ├── privacy.html                 개인정보처리방침 (AdSense 승인 요건)
 ├── css/style.css                전체 공용 스타일 (레이아웃, 도구 카드, 개별 도구 UI 전부 포함)
 └── tools/
-    └── json-formatter/
+    ├── json-formatter/
+    │   ├── index.html           도구 페이지
+    │   └── app.js                도구 전용 로직 (ES module)
+    └── url-encoder/
         ├── index.html           도구 페이지
         └── app.js                도구 전용 로직 (ES module)
 dist/                             `npm run build` 결과물. git에 커밋하지 않음, 배포 대상
@@ -38,7 +41,7 @@ npm run preview     # dist/ 결과물을 로컬에서 프리뷰
 
 ## 새 도구 추가하는 법
 
-1. `src/tools/<도구명>/index.html` 생성. 기존 `src/tools/json-formatter/index.html`을 템플릿으로 삼는다 (헤더, 브레드크럼, 광고 슬롯, 푸터 구조 동일하게 유지).
+1. `src/tools/<도구명>/index.html` 생성. 기존 `src/tools/json-formatter/index.html`을 템플릿으로 삼는다 (헤더, 브레드크럼, 광고 슬롯, 푸터 구조 동일하게 유지). 광고 슬롯은 하단 1곳만 둔다 (상단 광고는 제거됨).
 2. 도구 전용 JS가 필요하면 같은 폴더에 `app.js`로 작성하고 `<script type="module" src="app.js"></script>`로 로드한다. **`type="module"`을 빠뜨리면 Vite가 번들링/해시 처리를 하지 않고 파일을 그대로 복사만 한다.**
 3. `vite.config.js`의 `build.rollupOptions.input`에 새 페이지 엔트리를 추가한다 (안 하면 `npm run build` 시 해당 페이지가 `dist/`에 생성되지 않음).
 4. `src/index.html`의 `<main class="tool-grid">`에 도구 카드(`<a class="tool-card">`) 링크를 추가한다.
@@ -53,6 +56,8 @@ npm run preview     # dist/ 결과물을 로컬에서 프리뷰
 `ca-pub-XXXXXXXXXXXXXXXX`와 `data-ad-slot="0000000000"`은 전부 플레이스홀더다. 실제 배포 전에 발급받은 client ID와 slot ID로 각 페이지의 `<script>` 태그와 `<ins class="adsbygoogle">` 태그를 교체해야 한다.
 
 `adsbygoogle.push({})` 호출은 반드시 `window.adsbygoogle = window.adsbygoogle || []; window.adsbygoogle.push({});` 형태로 작성한다. `type="module"` 스크립트는 strict mode로 실행되므로, `var`/`window.` 없이 `adsbygoogle`에 직접 할당하면 `ReferenceError`가 발생하고 조용히 무시된다.
+
+각 페이지의 광고 슬롯(`<ins class="adsbygoogle">`) 개수와 `push({})` 호출 횟수는 항상 1:1로 맞춰야 한다. 슬롯을 추가/제거할 때 호출 횟수도 함께 조정한다.
 
 ## 알려진 제약
 

@@ -107,6 +107,5 @@
   try {
     window.adsbygoogle = window.adsbygoogle || [];
     window.adsbygoogle.push({});
-    window.adsbygoogle.push({});
   } catch (e) {}
 })();

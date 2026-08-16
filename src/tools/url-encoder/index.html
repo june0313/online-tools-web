@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL 인코더/디코더 - 무료 온라인 URL 인코딩 도구</title>
+<meta name="description" content="URL 문자열을 붙여넣으면 바로 인코딩하거나 디코딩해주는 무료 온라인 도구입니다.">
+<link rel="stylesheet" href="../../css/style.css">
+
+<!-- Google AdSense -->
+<!-- TODO: 발급받은 client ID로 교체하세요 (ca-pub-XXXXXXXXXXXXXXXX) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <h1><a href="../../">온라인 도구 모음</a></h1>
+  <p>브라우저에서 바로 실행되는 무료 유틸리티 모음</p>
+</header>
+
+<div class="breadcrumb"><a href="../../">홈</a> / URL 인코더/디코더</div>
+
+<main class="layout">
+  <div class="toolbar">
+    <button class="primary" id="encodeBtn">인코딩 (Encode)</button>
+    <button class="primary" id="decodeBtn">디코딩 (Decode)</button>
+    <button id="copyBtn">결과 복사</button>
+    <button id="clearBtn">전체 지우기</button>
+  </div>
+
+  <div class="panes">
+    <div class="pane">
+      <div class="pane-header">입력 (Input)</div>
+      <textarea id="input" spellcheck="false" placeholder="여기에 URL 또는 텍스트를 입력하세요. 예: https://example.com/검색?q=안녕"></textarea>
+    </div>
+    <div class="pane">
+      <div class="pane-header">결과 (Output)</div>
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <div id="status" class="status idle">텍스트를 입력한 뒤 버튼을 클릭하세요.</div>
+</main>
+
+<!-- 하단 광고 -->
+<div class="ad-slot">
+  <div class="ad-box">
+    <ins class="adsbygoogle"
+         style="display:block; width:100%; min-height:90px;"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+</div>
+
+<footer>
+  모든 처리는 브라우저 안에서만 이루어지며, 입력한 데이터는 서버로 전송되지 않습니다.
+  <nav>
+    <a href="../../">전체 도구 보기</a>
+    <a href="../../privacy.html">개인정보처리방침</a>
+  </nav>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

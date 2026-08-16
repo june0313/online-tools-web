@@ -6,7 +6,7 @@
 
   function getIndent() {
     const v = indentSelect.value;
-    return v === '\\t' ? '\t' : Number(v);
+    return v === '\t' ? '\t' : Number(v);
   }
 
   function setStatus(message, type) {
@@ -105,7 +105,8 @@
   });
 
   try {
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.push({});
+    window.adsbygoogle.push({});
   } catch (e) {}
 })();

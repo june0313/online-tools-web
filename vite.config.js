@@ -11,7 +11,8 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, 'src/index.html'),
         privacy: resolve(__dirname, 'src/privacy.html'),
-        json_formatter: resolve(__dirname, 'src/tools/json-formatter/index.html')
+        json_formatter: resolve(__dirname, 'src/tools/json-formatter/index.html'),
+        url_encoder: resolve(__dirname, 'src/tools/url-encoder/index.html')
       }
     }
   },

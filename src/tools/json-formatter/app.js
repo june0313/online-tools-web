@@ -76,6 +76,8 @@
     if (!text) return;
     navigator.clipboard.writeText(text).then(function () {
       setStatus('결과가 클립보드에 복사되었습니다.', 'ok');
+    }).catch(function () {
+      setStatus('클립보드 복사에 실패했습니다.', 'err');
     });
   });
 

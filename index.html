@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON 포맷터 - 무료 온라인 JSON 정렬/검증 도구</title>
+<meta name="description" content="JSON 텍스트를 붙여넣으면 바로 예쁘게 정렬하고 문법 오류를 검증해주는 무료 온라인 도구입니다.">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Google AdSense -->
+<!-- TODO: 발급받은 client ID로 교체하세요 (ca-pub-XXXXXXXXXXXXXXXX) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html">JSON 포맷터</a></h1>
+  <p>JSON 텍스트를 붙여넣으면 바로 정렬하고 오류를 검증해드립니다.</p>
+</header>
+
+<!-- 상단 광고 -->
+<div class="ad-slot">
+  <div class="ad-box">
+    <!-- TODO: 실제 <ins class="adsbygoogle"> 태그와 data-ad-slot으로 교체 -->
+    <ins class="adsbygoogle"
+         style="display:block; width:100%; min-height:90px;"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+</div>
+
+<main class="layout">
+  <div class="toolbar">
+    <button class="primary" id="formatBtn">정렬 (Format)</button>
+    <button id="minifyBtn">압축 (Minify)</button>
+    <button id="copyBtn">결과 복사</button>
+    <button id="clearBtn">전체 지우기</button>
+    <button id="sampleBtn">예제 불러오기</button>
+    <select id="indentSelect">
+      <option value="2">들여쓰기 2칸</option>
+      <option value="4">들여쓰기 4칸</option>
+      <option value="\t">탭</option>
+    </select>
+  </div>
+
+  <div class="panes">
+    <div class="pane">
+      <div class="pane-header">입력 (Input)</div>
+      <textarea id="input" spellcheck="false" placeholder='여기에 JSON을 붙여넣으세요. 예: {"name":"John","age":30}'></textarea>
+    </div>
+    <div class="pane">
+      <div class="pane-header">결과 (Output)</div>
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <div id="status" class="status idle">JSON을 입력하면 자동으로 정렬됩니다.</div>
+</main>
+
+<!-- 하단 광고 -->
+<div class="ad-slot">
+  <div class="ad-box">
+    <ins class="adsbygoogle"
+         style="display:block; width:100%; min-height:90px;"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+</div>
+
+<footer>
+  모든 처리는 브라우저 안에서만 이루어지며, 입력한 데이터는 서버로 전송되지 않습니다.
+  <nav>
+    <a href="privacy.html">개인정보처리방침</a>
+  </nav>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
